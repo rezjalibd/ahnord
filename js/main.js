@@ -1,6 +1,7 @@
 /**
  * AH Nord GmbH - Enterprise Site Controller
- * Handles Themes, Language Switching, Dynamic DB Loading, Forms & Animations
+ * Handles Themes, Language Switching across all elements,
+ * Mobile Drawer, Back-To-Top FAB, Forms, and Interactive Animations.
  */
 
 (function () {
@@ -9,14 +10,23 @@
   let currentLang = localStorage.getItem('ahnord_lang') || 'de';
   let currentTheme = localStorage.getItem('ahnord_theme') || 'light';
   let translations = {};
-  let siteDB = {};
 
-  // Theme Management
+  // Theme Management (Dual Theme with High Contrast & Contrast Protection)
   function initTheme() {
     document.documentElement.setAttribute('data-theme', currentTheme);
-    const themeBtn = document.getElementById('themeToggle');
-    if (themeBtn) {
-      themeBtn.innerHTML = currentTheme === 'dark' ? '☀️' : '🌙';
+    updateThemeIcon();
+  }
+
+  function updateThemeIcon() {
+    const sunIcons = document.querySelectorAll('.theme-icon-sun');
+    const moonIcons = document.querySelectorAll('.theme-icon-moon');
+    
+    if (currentTheme === 'dark') {
+      sunIcons.forEach(el => el.style.display = 'inline-block');
+      moonIcons.forEach(el => el.style.display = 'none');
+    } else {
+      sunIcons.forEach(el => el.style.display = 'none');
+      moonIcons.forEach(el => el.style.display = 'inline-block');
     }
   }
 
@@ -27,6 +37,10 @@
   };
 
   // Language & Translation Engine
+  function getBasePath() {
+    return (window.location.pathname.match(/\/pages\//) ? '../' : './');
+  }
+
   async function loadTranslations() {
     try {
       const basePath = getBasePath();
@@ -34,13 +48,8 @@
       translations = await resp.json();
       applyLanguage(currentLang);
     } catch (e) {
-      console.warn('Translations fallback mode', e);
+      console.warn('Failed to load translations:', e);
     }
-  }
-
-  function getBasePath() {
-    const depth = (window.location.pathname.match(/\/pages\//) ? '../' : './');
-    return depth;
   }
 
   window.setLanguage = function (lang) {
@@ -48,9 +57,28 @@
     currentLang = lang;
     localStorage.setItem('ahnord_lang', lang);
     applyLanguage(lang);
-    const select = document.getElementById('langSelect');
-    if (select) select.value = lang;
+    updateLangUI(lang);
   };
+
+  function updateLangUI(lang) {
+    document.querySelectorAll('.lang-option').forEach(opt => {
+      if (opt.getAttribute('data-lang') === lang) {
+        opt.classList.add('active');
+      } else {
+        opt.classList.remove('active');
+      }
+    });
+
+    const currentLabel = document.querySelector('.current-lang-code');
+    if (currentLabel) {
+      currentLabel.textContent = lang.toUpperCase();
+    }
+    
+    const currentFlag = document.querySelector('.current-lang-flag');
+    if (currentFlag) {
+      currentFlag.textContent = lang === 'de' ? '🇩🇪' : (lang === 'en' ? '🇬🇧' : '🇫🇷');
+    }
+  }
 
   function applyLanguage(lang) {
     const dict = translations[lang] || {};
@@ -65,6 +93,51 @@
           el.textContent = dict[key];
         }
       }
+    });
+  }
+
+  // Mobile Drawer Toggle
+  window.toggleMobileMenu = function () {
+    const drawer = document.getElementById('mobileDrawer');
+    const overlay = document.getElementById('mobileOverlay');
+
+    if (drawer && overlay) {
+      const isOpen = drawer.classList.contains('active');
+      if (isOpen) {
+        drawer.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      } else {
+        drawer.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+  };
+
+  window.closeMobileMenu = function () {
+    const drawer = document.getElementById('mobileDrawer');
+    const overlay = document.getElementById('mobileOverlay');
+    if (drawer) drawer.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  // Back to Top Button
+  function initBackToTop() {
+    const btt = document.getElementById('backToTopBtn');
+    if (!btt) return;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 350) {
+        btt.classList.add('visible');
+      } else {
+        btt.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    btt.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
@@ -89,16 +162,15 @@
     if (banner) banner.classList.remove('visible');
   };
 
-  // Form Submission & Validation
+  // Contact Form Submission
   window.handleContactSubmit = function (event) {
     event.preventDefault();
     const form = event.target;
     const submitBtn = form.querySelector('button[type="submit"]');
-    const origText = submitBtn.innerHTML;
 
-    // Simulate enterprise lead submission & verification
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span>Verarbeite...</span>';
+    submitBtn.classList.add('btn-loading');
+    submitBtn.innerHTML = '<span class="spinner"></span> <span>Wird gesendet...</span>';
 
     setTimeout(() => {
       const basePath = getBasePath();
@@ -106,21 +178,40 @@
     }, 900);
   };
 
-  // DOM Content Loaded Initializer
+  // Custom Language Dropdown Toggle
+  window.toggleLangMenu = function (e) {
+    if (e) e.stopPropagation();
+    const dropdown = document.getElementById('langDropdownMenu');
+    if (dropdown) {
+      dropdown.classList.toggle('show');
+    }
+  };
+
+  document.addEventListener('click', (e) => {
+    const dropdown = document.getElementById('langDropdownMenu');
+    if (dropdown && dropdown.classList.contains('show')) {
+      if (!e.target.closest('.lang-dropdown-wrapper')) {
+        dropdown.classList.remove('show');
+      }
+    }
+  });
+
+  // Init on DOM ready
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     loadTranslations();
+    initBackToTop();
     initCookieBanner();
+    updateLangUI(currentLang);
 
-    const themeBtn = document.getElementById('themeToggle');
-    if (themeBtn) {
-      themeBtn.addEventListener('click', window.toggleTheme);
-    }
+    // Theme toggles
+    document.querySelectorAll('.btn-theme-toggle').forEach(btn => {
+      btn.addEventListener('click', window.toggleTheme);
+    });
 
-    const langSelect = document.getElementById('langSelect');
-    if (langSelect) {
-      langSelect.value = currentLang;
-      langSelect.addEventListener('change', (e) => window.setLanguage(e.target.value));
-    }
+    // Mobile nav item clicks auto close drawer
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', window.closeMobileMenu);
+    });
   });
 })();

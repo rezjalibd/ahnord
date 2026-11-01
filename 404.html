@@ -20,11 +20,12 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <!-- Ambient Animation Backdrop -->
+  <!-- Ambient Floating Animation Shapes -->
   <div class="canvas-backdrop">
     <div class="shape-blob shape-1"></div>
     <div class="shape-blob shape-2"></div>
     <div class="shape-blob shape-3"></div>
+    <div class="shape-blob shape-4"></div>
   </div>
 
   <!-- Header -->
@@ -34,27 +35,122 @@
         <img src="./img/logo.svg" alt="AH Nord GmbH Logo" class="brand-logo">
       </a>
       
+      <!-- Desktop Navigation with Products Dropdown -->
       <nav class="main-nav">
         <a href="./index.html" class="nav-link" data-i18n="nav_home">Startseite</a>
-        <a href="./pages/modern-events-calendar.html" class="nav-link" data-i18n="nav_mec">MEC Calendar</a>
-        <a href="./pages/kata-theme.html" class="nav-link" data-i18n="nav_kata">Kata Theme</a>
-        <a href="./pages/shoppress.html" class="nav-link" data-i18n="nav_shoppress">ShopPress</a>
+        
+        <div class="nav-dropdown-wrapper">
+          <a href="./index.html#products" class="nav-link nav-dropdown-trigger">
+            <span data-i18n="nav_products">Produkte</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="nav-dropdown-menu">
+            <a href="./pages/modern-events-calendar.html" class="dropdown-item">
+              <span style="font-size:1.3rem;">📅</span>
+              <div>
+                <span class="dropdown-item-title" data-i18n="nav_mec">Modern Events Calendar</span>
+                <span class="dropdown-item-desc">#1 WordPress Events Platform</span>
+              </div>
+            </a>
+            <a href="./pages/kata-theme.html" class="dropdown-item">
+              <span style="font-size:1.3rem;">⚡</span>
+              <div>
+                <span class="dropdown-item-title" data-i18n="nav_kata">Kata Theme</span>
+                <span class="dropdown-item-desc">100/100 PageSpeed Builder</span>
+              </div>
+            </a>
+            <a href="./pages/shoppress.html" class="dropdown-item">
+              <span style="font-size:1.3rem;">🛍️</span>
+              <div>
+                <span class="dropdown-item-title" data-i18n="nav_shoppress">ShopPress Builder</span>
+                <span class="dropdown-item-desc">WooCommerce Suite for Elementor</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
         <a href="./pages/services.html" class="nav-link" data-i18n="nav_services">Dienstleistungen</a>
         <a href="./pages/about.html" class="nav-link" data-i18n="nav_about">Über uns</a>
         <a href="./pages/contact.html" class="nav-link" data-i18n="nav_contact">Kontakt</a>
       </nav>
       
+      <!-- Header Controls: Redesigned Language & Theme Switchers -->
       <div class="header-actions">
-        <select id="langSelect" class="lang-select" aria-label="Sprachauswahl">
-          <option value="de">🇩🇪 Deutsch</option>
-          <option value="en">🇬🇧 English</option>
-          <option value="fr">🇫🇷 Français</option>
-        </select>
-        <button id="themeToggle" class="theme-toggle" aria-label="Farbschema umschalten">🌙</button>
+        <!-- Language Switcher Pill -->
+        <div class="lang-dropdown-wrapper">
+          <button class="lang-dropdown-btn" onclick="toggleLangMenu(event)" aria-label="Sprachauswahl">
+            <span class="current-lang-flag">🇩🇪</span>
+            <span class="current-lang-code">DE</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div id="langDropdownMenu" class="lang-dropdown-menu">
+            <button class="lang-option active" data-lang="de" onclick="setLanguage('de')">
+              <span>🇩🇪</span> <span>Deutsch</span>
+            </button>
+            <button class="lang-option" data-lang="en" onclick="setLanguage('en')">
+              <span>🇬🇧</span> <span>English</span>
+            </button>
+            <button class="lang-option" data-lang="fr" onclick="setLanguage('fr')">
+              <span>🇫🇷</span> <span>Français</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Theme Toggle Button with Geometric SVG Icons -->
+        <button class="btn-theme-toggle" aria-label="Farbschema umschalten" title="Theme umschalten">
+          <!-- Sun icon for Dark Mode -->
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" style="display:none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon icon for Light Mode -->
+          <svg class="theme-icon-moon" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
         <a href="./pages/contact.html" class="btn-cta" data-i18n="btn_quote">Angebot anfordern</a>
+        
+        <!-- Mobile Drawer Toggle Trigger -->
+        <button class="mobile-toggle" id="mobileToggleBtn" onclick="toggleMobileMenu()" aria-label="Menü öffnen">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Off-Canvas Drawer -->
+  <div class="mobile-drawer-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <img src="./img/logo.svg" alt="AH Nord" style="height:32px;">
+      <button class="mobile-close-btn" onclick="closeMobileMenu()" aria-label="Menü schließen">✕</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="./index.html" class="mobile-nav-link" data-i18n="nav_home">Startseite</a>
+      <a href="./pages/modern-events-calendar.html" class="mobile-nav-link" data-i18n="nav_mec">Modern Events Calendar</a>
+      <a href="./pages/kata-theme.html" class="mobile-nav-link" data-i18n="nav_kata">Kata Theme</a>
+      <a href="./pages/shoppress.html" class="mobile-nav-link" data-i18n="nav_shoppress">ShopPress Builder</a>
+      <a href="./pages/services.html" class="mobile-nav-link" data-i18n="nav_services">Dienstleistungen</a>
+      <a href="./pages/about.html" class="mobile-nav-link" data-i18n="nav_about">Über uns</a>
+      <a href="./pages/contact.html" class="mobile-nav-link" data-i18n="nav_contact">Kontakt</a>
+    </div>
+    <div style="margin-top:auto; padding-top:20px;">
+      <a href="./pages/contact.html" class="btn-cta" style="width:100%; justify-content:center;" data-i18n="btn_quote">Angebot anfordern</a>
+    </div>
+  </aside>
+
   <main class="main-wrapper">
 
 <section class="section-container" style="text-align:center; padding:100px 24px;">
@@ -70,10 +166,17 @@
 
   </main>
 
-  <!-- Sticky Mobile Action -->
+  <!-- Floating Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" aria-label="Nach oben scrollen" title="Nach oben">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Sticky Mobile Action Footer -->
   <div class="mobile-sticky-cta">
     <span style="font-weight:700; font-size:0.85rem;">AH Nord GmbH</span>
-    <a href="./pages/contact.html" class="btn-cta" style="padding: 8px 16px; font-size: 0.8rem;" data-i18n="btn_quote">Angebot anfordern</a>
+    <a href="./pages/contact.html" class="btn-cta" style="padding: 8px 16px; font-size: 0.82rem;" data-i18n="btn_quote">Angebot anfordern</a>
   </div>
 
   <!-- Cookie Consent -->
@@ -95,7 +198,7 @@
         <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:16px; max-width:320px;">
           Offizieller Enterprise-Reseller und Implementierungspartner der Webnus Inc. für Deutschland, Österreich und die Schweiz.
         </p>
-        <p style="font-size:0.85rem; color:var(--text-muted);">
+        <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.8;">
           📍 Wandsbeker Chaussee 212, 22089 Hamburg, Germany<br>
           📞 +49 173 1436411 | ✉️ info@ahnord.tech
         </p>
@@ -103,32 +206,32 @@
       <div>
         <h4 style="font-size:1rem; font-weight:700; margin-bottom:16px;">Webnus Produkte</h4>
         <ul style="list-style:none; font-size:0.9rem; line-height:2.2;">
-          <li><a href="./pages/modern-events-calendar.html" style="color:var(--text-secondary);">Modern Events Calendar</a></li>
-          <li><a href="./pages/kata-theme.html" style="color:var(--text-secondary);">Kata WordPress Theme</a></li>
-          <li><a href="./pages/shoppress.html" style="color:var(--text-secondary);">ShopPress WooCommerce</a></li>
+          <li><a href="./pages/modern-events-calendar.html" style="color:var(--text-secondary);" data-i18n="nav_mec">Modern Events Calendar</a></li>
+          <li><a href="./pages/kata-theme.html" style="color:var(--text-secondary);" data-i18n="nav_kata">Kata WordPress Theme</a></li>
+          <li><a href="./pages/shoppress.html" style="color:var(--text-secondary);" data-i18n="nav_shoppress">ShopPress WooCommerce</a></li>
         </ul>
       </div>
       <div>
         <h4 style="font-size:1rem; font-weight:700; margin-bottom:16px;">Enterprise Services</h4>
         <ul style="list-style:none; font-size:0.9rem; line-height:2.2;">
-          <li><a href="./pages/services.html" style="color:var(--text-secondary);">Enterprise Setup</a></li>
-          <li><a href="./pages/services.html" style="color:var(--text-secondary);">Custom Development</a></li>
-          <li><a href="./pages/services.html" style="color:var(--text-secondary);">DSGVO Performance Audit</a></li>
-          <li><a href="./pages/services.html" style="color:var(--text-secondary);">24/7 SLA Support</a></li>
+          <li><a href="./pages/services.html" style="color:var(--text-secondary);" data-i18n="srv_1_title">Enterprise Setup & Migration</a></li>
+          <li><a href="./pages/services.html" style="color:var(--text-secondary);" data-i18n="srv_2_title">Custom Development & APIs</a></li>
+          <li><a href="./pages/services.html" style="color:var(--text-secondary);" data-i18n="srv_3_title">DSGVO-Audit & Compliance</a></li>
+          <li><a href="./pages/services.html" style="color:var(--text-secondary);" data-i18n="srv_5_title">24/7 SLA Support</a></li>
         </ul>
       </div>
       <div>
         <h4 style="font-size:1rem; font-weight:700; margin-bottom:16px;">Rechtliches & Info</h4>
         <ul style="list-style:none; font-size:0.9rem; line-height:2.2;">
-          <li><a href="./pages/about.html" style="color:var(--text-secondary);">Über uns</a></li>
-          <li><a href="./pages/contact.html" style="color:var(--text-secondary);">Kontakt & Beratung</a></li>
-          <li><a href="./pages/privacy.html" style="color:var(--text-secondary);">Datenschutzerklärung</a></li>
-          <li><a href="./pages/terms.html" style="color:var(--text-secondary);">Impressum & AGB</a></li>
+          <li><a href="./pages/about.html" style="color:var(--text-secondary);" data-i18n="nav_about">Über uns</a></li>
+          <li><a href="./pages/contact.html" style="color:var(--text-secondary);" data-i18n="nav_contact">Kontakt & Beratung</a></li>
+          <li><a href="./pages/privacy.html" style="color:var(--text-secondary);" data-i18n="privacy_policy">Datenschutzerklärung</a></li>
+          <li><a href="./pages/terms.html" style="color:var(--text-secondary);" data-i18n="terms_conditions">Impressum & AGB</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 AH Nord GmbH. Alle Rechte vorbehalten.</span>
+      <span>© 2026 AH Nord GmbH. <span data-i18n="footer_rights">Alle Rechte vorbehalten.</span></span>
       <span>Offizieller Vertriebspartner der Webnus Inc.</span>
     </div>
   </footer>

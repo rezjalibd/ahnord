@@ -1,0 +1,167 @@
+{
+  "company": {
+    "name": "AH Nord GmbH",
+    "legal_form": "GmbH",
+    "role": "Offizieller Reseller & Enterprise Partner der Webnus Inc.",
+    "address": "Wandsbeker Chaussee 212, 22089 Hamburg, Germany",
+    "email": "info@ahnord.tech",
+    "phone": "+49 173 1436411",
+    "domain": "https://ahnord.tech",
+    "jurisdiction": "Amtsgericht Hamburg"
+  },
+  "products": [
+    {
+      "id": "mec",
+      "slug": "modern-events-calendar",
+      "name": "Modern Events Calendar (MEC)",
+      "category": "WordPress Event Management Platform",
+      "badges": [
+        "#1 Events Plugin",
+        "200,000+ Active Installs",
+        "Elementor Native"
+      ],
+      "short_desc": "Das führende Event-Management-System für WordPress mit über 60 Display-Layouts, Ticket-Verkauf, QR-Code Check-in, Zoom-Integration und mobilem Veranstaltungs-Dashboard.",
+      "features": [
+        "Über 60 moderne Kalender- und Event-Layouts (Monat, Woche, Liste, Grid, Slider)",
+        "Integrierter Ticket-Verkauf mit variablen Tarifen und Sitzplatz-Buchung",
+        "QR-Code Ticket Check-in via mobiler Scanner-App (iOS & Android)",
+        "Native Integration mit Elementor, Divi und Gutenberg",
+        "Zoom & Web-Meeting Automatisierung für hybride Events",
+        "Zahlungs-Gateways: Stripe, PayPal, WooCommerce, Apple Pay & Google Pay",
+        "Wiederkehrende Events mit flexiblen Rhythmen und Feiertags-Filtern",
+        "Umfangreiche Add-ons: Frontend Submission, Virtual Events, User Dashboard"
+      ],
+      "stats": [
+        {
+          "val": "200k+",
+          "label": "Aktive Installationen"
+        },
+        {
+          "val": "60+",
+          "label": "Kalender-Layouts"
+        },
+        {
+          "val": "99.8%",
+          "label": "Zufriedenheitsrate"
+        }
+      ]
+    },
+    {
+      "id": "kata",
+      "slug": "kata-theme",
+      "name": "Kata WordPress Multi-Purpose Theme",
+      "category": "Next-Gen Performance Page Builder Theme",
+      "badges": [
+        "100/100 PageSpeed",
+        "120+ Demo Sites",
+        "Fast Mode Built-in"
+      ],
+      "short_desc": "Das modularste Elementor-Theme der Welt mit unvergleichlicher Geschwindigkeit, Deep Visual Styler und der innovativen Fast Mode Technologie für blitzschnellen Website-Launch.",
+      "features": [
+        "100/100 Google PageSpeed Score durch modulare CSS/JS Engine",
+        "120+ vorgefertigte Branchen-Demos für Corporate, Shop, Portfolio & Agenturen",
+        "Revolutionärer Fast Mode: Website-Erstellung in wenigen Klicks per Formular",
+        "Kata Styler: Pixel-genaue visuelle Kontrolle über Typografie, Abstände & Farben",
+        "Header, Footer & Mega-Menu Builder voll integriert",
+        "DSGVO-konforme lokale Google-Fonts und Cookie-Management",
+        "Nahtlose WooCommerce & ShopPress Integration",
+        "Vollständig responsive mit individuellen Device-Breakpoints"
+      ],
+      "stats": [
+        {
+          "val": "100/100",
+          "label": "Google PageSpeed"
+        },
+        {
+          "val": "120+",
+          "label": "Ready-to-Use Demos"
+        },
+        {
+          "val": "0.4s",
+          "label": "Durchschnittliche Ladezeit"
+        }
+      ]
+    },
+    {
+      "id": "shoppress",
+      "slug": "shoppress",
+      "name": "ShopPress WooCommerce Builder",
+      "category": "All-in-One WooCommerce Suite for Elementor",
+      "badges": [
+        "Replaces 30+ Plugins",
+        "Conversion Booster",
+        "Full Customizer"
+      ],
+      "short_desc": "Die Komplettlösung für moderne WooCommerce-Stores. Ersetzt über 30 Einzel-Plugins und bietet vollständige Kontrolle über Single Product, Archive, Checkout, Cart und Filter.",
+      "features": [
+        "Vollständiger Elementor Shop & Product Page Builder",
+        "Modernes Ajax-Filter-System (Attribute, Kategorien, Preis-Slider)",
+        "Integrierte Wishlist-, Quick View- und Product Comparison-Module",
+        "Custom Multi-Step & One-Page Checkout Builder zur Conversion-Steigerung",
+        "Erweiterte Produkt-Badges, Countdown-Timer und Stock-Notifiers",
+        "Cross-Sell & Up-Sell Module für höheren Warenkorbwert",
+        "Native Unterstützung für variable Produkte und Swatches",
+        "Extrem schlanker Code ohne Datenbank-Overhead"
+      ],
+      "stats": [
+        {
+          "val": "30+",
+          "label": "Ersetzte Einzel-Plugins"
+        },
+        {
+          "val": "+42%",
+          "label": "Durchschnittliche Conversion-Steigerung"
+        },
+        {
+          "val": "100%",
+          "label": "WooCommerce & HPOS Kompatibel"
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "id": "enterprise-implementation",
+      "title": "Enterprise Implementierung & Setup",
+      "desc": "Schlüsselfertige Einrichtung von Webnus-Produkten in Ihrer Server- und Cloud-Infrastruktur nach deutschen Sicherheitsstandards."
+    },
+    {
+      "id": "custom-development",
+      "title": "Custom Development & Add-on Entwicklung",
+      "desc": "Individuelle Erweiterungen, Schnittstellen (APIs), ERP-Anbindungen und maßgeschneiderte Workflows für MEC und ShopPress."
+    },
+    {
+      "id": "performance-gdpr",
+      "title": "Performance-Tuning & DSGVO-Audit",
+      "desc": "Optimierung auf Google Core Web Vitals (PageSpeed 95+) und rechtssichere Anpassung an europäische Datenschutzrichtlinien."
+    },
+    {
+      "id": "migration-service",
+      "title": "Plattform-Migration & Modernisierung",
+      "desc": "Verlustfreie Migration von veralteten Kalender- oder Shop-Plugins auf moderne Webnus-Architekturen ohne Downtime."
+    },
+    {
+      "id": "sla-support",
+      "title": "Dedizierter 24/7 SLA Support",
+      "desc": "Prioritärer technischer Support auf Deutsch und Englisch mit garantierten Reaktionszeiten für unternehmenskritische Portale."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Welche Rolle hat die AH Nord GmbH in Bezug auf Webnus?",
+      "a": "Die AH Nord GmbH ist der offizielle Vertriebs- und Implementierungspartner von Webnus Inc. in Deutschland und dem europäischen Wirtschaftsraum. Wir beraten, verkaufen Enterprise-Lizenzen und bieten deutschsprachigen Implementierungssupport."
+    },
+    {
+      "q": "Wie erhalte ich ein individuelles Angebot oder Preise?",
+      "a": "Da wir maßgeschneiderte Enterprise-Lizenzen, Bundles und Implementierungsdienstleistungen anbieten, erstellen wir Ihnen gerne ein unverbindliches Angebot. Nutzen Sie einfach unser Kontaktformular oder rufen Sie uns direkt an."
+    },
+    {
+      "q": "Sind die Lösungen DSGVO-konform (GDPR)?",
+      "a": "Ja. Alle von uns implementierten Lösungen werden gezielt auf europäische Datenschutzanforderungen angepasst, inklusive lokaler Font-Einbindung, Cookie-Consent und sicherer Datenverarbeitung."
+    },
+    {
+      "q": "Bieten Sie auch individuellen Support und Wartungsverträge an?",
+      "a": "Ja, wir bieten maßgeschneiderte Service-Level-Agreements (SLA) mit definierten Reaktionszeiten, kontinuierlichen Updates und proaktiver Systemwartung an."
+    }
+  ]
+}

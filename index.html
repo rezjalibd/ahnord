@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Web Solutions & Webnus Partner | AH Nord GmbH</title>
+  <meta name="description" content="AH Nord GmbH — Offizieller Enterprise Partner & Reseller von Webnus in Deutschland. Modern Events Calendar, Kata Theme und ShopPress WooCommerce Builder.">
+  <link rel="icon" type="image/svg+xml" href="./img/favicon.svg">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Enterprise Web Solutions & Webnus Partner | AH Nord GmbH">
+  <meta property="og:description" content="Offizieller Vertrieb und Integration von Webnus Enterprise Lösungen in Deutschland.">
+  <meta property="og:image" content="./img/og-image.svg">
+  
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!-- Ambient Animation Backdrop -->
+  <div class="canvas-backdrop">
+    <div class="shape-blob shape-1"></div>
+    <div class="shape-blob shape-2"></div>
+    <div class="shape-blob shape-3"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="./index.html" class="brand-link">
+        <img src="./img/logo.svg" alt="AH Nord GmbH Logo" class="brand-logo">
+      </a>
+      
+      <nav class="main-nav">
+        <a href="./index.html" class="nav-link" data-i18n="nav_home">Startseite</a>
+        <a href="./pages/modern-events-calendar.html" class="nav-link" data-i18n="nav_mec">MEC Calendar</a>
+        <a href="./pages/kata-theme.html" class="nav-link" data-i18n="nav_kata">Kata Theme</a>
+        <a href="./pages/shoppress.html" class="nav-link" data-i18n="nav_shoppress">ShopPress</a>
+        <a href="./pages/services.html" class="nav-link" data-i18n="nav_services">Dienstleistungen</a>
+        <a href="./pages/about.html" class="nav-link" data-i18n="nav_about">Über uns</a>
+        <a href="./pages/contact.html" class="nav-link" data-i18n="nav_contact">Kontakt</a>
+      </nav>
+      
+      <div class="header-actions">
+        <select id="langSelect" class="lang-select" aria-label="Sprachauswahl">
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="fr">🇫🇷 Français</option>
+        </select>
+        <button id="themeToggle" class="theme-toggle" aria-label="Farbschema umschalten">🌙</button>
+        <a href="./pages/contact.html" class="btn-cta" data-i18n="btn_quote">Angebot anfordern</a>
+      </div>
+    </div>
+  </header>
+  <main class="main-wrapper">
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="section-container hero-grid">
+        <div>
+          <div class="hero-badge">
+            <span>🛡️</span>
+            <span data-i18n="badge_official">Offizieller Webnus Enterprise Partner • Deutschland</span>
+          </div>
+          <h1 class="hero-title">
+            Enterprise Web-Lösungen für <span class="gradient-text">WordPress & WooCommerce</span>
+          </h1>
+          <p class="hero-subtitle" data-i18n="hero_subtitle">
+            Als autorisierter Partner der Webnus Inc. implementieren, optimieren und betreuen wir hochperformante Event-, Theme- und E-Commerce-Systeme für anspruchsvolle Unternehmen im DACH-Raum.
+          </p>
+          <div class="hero-buttons">
+            <a href="./pages/contact.html" class="btn-cta" data-i18n="btn_quote">Angebot anfordern</a>
+            <a href="#products" class="btn-secondary" data-i18n="btn_explore">Produkte entdecken</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="stat-val">200k+</div>
+              <div class="stat-label" data-i18n="stat_installs">Aktive Webnus-Nutzer</div>
+            </div>
+            <div>
+              <div class="stat-val">99.9%</div>
+              <div class="stat-label" data-i18n="stat_uptime">SLA Support-Verfügbarkeit</div>
+            </div>
+            <div>
+              <div class="stat-val">100/100</div>
+              <div class="stat-label">Google PageSpeed Rating</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-visual">
+          <div class="visual-card-glass">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+              <span style="font-weight:800; font-size:1.1rem; color:var(--primary-blue);">AH NORD PLATFORM</span>
+              <span style="background:rgba(0,138,255,0.1); color:var(--primary-blue); font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:12px;">ACTIVE DEPLOYMENT</span>
+            </div>
+            <img src="./img/mec-hero.svg" alt="MEC Calendar Platform" style="margin-bottom:20px; border-radius:14px; background:var(--bg-surface-alt); padding:16px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.85rem; color:var(--text-secondary);">
+              <span>⚡ Core Web Vitals Ready</span>
+              <span>🔒 100% DSGVO-Konform</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Showcase -->
+    <section id="products" class="section-container" style="padding-top:40px;">
+      <div class="section-header">
+        <span class="section-tag">PRODUKTPORTFOLIO</span>
+        <h2 class="section-title" data-i18n="products_heading">Offizielles Webnus Produktportfolio</h2>
+        <p class="section-sub" data-i18n="products_sub">
+          Marktführende Software-Architekturen für maximale Performance und Conversion.
+        </p>
+      </div>
+      
+      <div class="cards-grid-3">
+        <!-- MEC -->
+        <div class="product-card">
+          <div class="product-card-top">
+            <img src="./img/mec-logo.svg" alt="Modern Events Calendar" class="product-logo-img">
+            <span class="product-badge">#1 Event Plugin</span>
+          </div>
+          <h3 class="product-card-title">Modern Events Calendar (MEC)</h3>
+          <p class="product-card-desc">
+            Das umfassendste Event-Management-System für WordPress mit über 60 Display-Layouts, Ticket-Verkauf, QR-Code Check-in und Zoom-Integration.
+          </p>
+          <ul class="feature-list">
+            <li>Über 60 moderne Kalender- und Listen-Layouts</li>
+            <li>Integrierter Ticket-Verkauf & variable Preistabellen</li>
+            <li>Mobiles QR Check-in für Veranstaltungs-Personal</li>
+            <li>Zoom & Hybrid-Event Automatisierung</li>
+          </ul>
+          <div style="display:flex; gap:12px; margin-top:auto;">
+            <a href="./pages/modern-events-calendar.html" class="btn-secondary" style="flex:1; justify-content:center;">Details</a>
+            <a href="./pages/contact.html" class="btn-cta" style="flex:1; justify-content:center;">Preise anfragen</a>
+          </div>
+        </div>
+
+        <!-- Kata Theme -->
+        <div class="product-card">
+          <div class="product-card-top">
+            <img src="./img/kata-logo.svg" alt="Kata WordPress Theme" class="product-logo-img">
+            <span class="product-badge">100/100 PageSpeed</span>
+          </div>
+          <h3 class="product-card-title">Kata WordPress Theme</h3>
+          <p class="product-card-desc">
+            Das fortschrittlichste Elementor-Theme mit modernstem Visual Styler, revolutionärem Fast Mode und 120+ vorgefertigten Unternehmens-Demos.
+          </p>
+          <ul class="feature-list">
+            <li>100/100 Google PageSpeed Performance</li>
+            <li>Fast Mode: Website-Erstellung in wenigen Klicks</li>
+            <li>Deep Visual Styler für pixelgenaue Kontrolle</li>
+            <li>120+ schlüsselfertige Industrie-Templates</li>
+          </ul>
+          <div style="display:flex; gap:12px; margin-top:auto;">
+            <a href="./pages/kata-theme.html" class="btn-secondary" style="flex:1; justify-content:center;">Details</a>
+            <a href="./pages/contact.html" class="btn-cta" style="flex:1; justify-content:center;">Preise anfragen</a>
+          </div>
+        </div>
+
+        <!-- ShopPress -->
+        <div class="product-card">
+          <div class="product-card-top">
+            <img src="./img/shoppress-logo.svg" alt="ShopPress Builder" class="product-logo-img">
+            <span class="product-badge">30+ Plugins In One</span>
+          </div>
+          <h3 class="product-card-title">ShopPress WooCommerce Builder</h3>
+          <p class="product-card-desc">
+            Die Komplettlösung für modernen E-Commerce. Ersetzt über 30 Einzel-Plugins und bietet volle Gestaltungsfreiheit für Shop, Cart & Checkout.
+          </p>
+          <ul class="feature-list">
+            <li>Elementor Single & Archive Shop Builder</li>
+            <li>Ajax Filter für Kategorien, Attribute & Preise</li>
+            <li>Multi-Step High-Conversion Checkout</li>
+            <li>Wishlist, Quick View & Compare Module</li>
+          </ul>
+          <div style="display:flex; gap:12px; margin-top:auto;">
+            <a href="./pages/shoppress.html" class="btn-secondary" style="flex:1; justify-content:center;">Details</a>
+            <a href="./pages/contact.html" class="btn-cta" style="flex:1; justify-content:center;">Preise anfragen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why AH Nord -->
+    <section class="section-container" style="background:var(--bg-surface-alt); border-radius:32px; margin-top:60px; margin-bottom:60px;">
+      <div class="section-header">
+        <span class="section-tag">IHRE VORTEILE</span>
+        <h2 class="section-title" data-i18n="why_heading">Warum AH Nord GmbH?</h2>
+        <p class="section-sub">
+          Als in Hamburg ansässige GmbH bieten wir Ihnen juristische Sicherheit, deutschsprachigen Support und First-Party Webnus-Expertise.
+        </p>
+      </div>
+      
+      <div class="cards-grid-3">
+        <div style="padding:24px;">
+          <div style="font-size:2.2rem; margin-bottom:12px;">🇩🇪</div>
+          <h4 style="font-size:1.2rem; font-weight:700; margin-bottom:8px;" data-i18n="why_4_title">Deutscher Vertragspartner</h4>
+          <p style="color:var(--text-secondary); font-size:0.92rem;" data-i18n="why_4_desc">
+            Rechnungswesen, SLA und rechtliche Sicherheit nach deutschem Handelsrecht (GmbH).
+          </p>
+        </div>
+        <div style="padding:24px;">
+          <div style="font-size:2.2rem; margin-bottom:12px;">🛡️</div>
+          <h4 style="font-size:1.2rem; font-weight:700; margin-bottom:8px;" data-i18n="why_2_title">DSGVO & Rechtssicherheit</h4>
+          <p style="color:var(--text-secondary); font-size:0.92rem;" data-i18n="why_2_desc">
+            Vollständige Anpassung an deutsche und europäische Datenschutzstandards.
+          </p>
+        </div>
+        <div style="padding:24px;">
+          <div style="font-size:2.2rem; margin-bottom:12px;">⚡</div>
+          <h4 style="font-size:1.2rem; font-weight:700; margin-bottom:8px;" data-i18n="why_3_title">Performance-Garantie</h4>
+          <p style="color:var(--text-secondary); font-size:0.92rem;" data-i18n="why_3_desc">
+            Core Web Vitals Optimierung für Google PageSpeed Scores von 95+.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="section-container">
+      <div class="section-header">
+        <span class="section-tag">KONTAKT & ANGEBOT</span>
+        <h2 class="section-title" data-i18n="contact_heading">Sprechen Sie mit unseren Enterprise-Beratern</h2>
+        <p class="section-sub" data-i18n="contact_sub">
+          Wir analysieren Ihre Projektanforderungen und erstellen Ihnen ein maßgeschneidertes Angebot.
+        </p>
+      </div>
+
+      <div style="max-width:760px; margin:0 auto;" class="form-card">
+        <form onsubmit="handleContactSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" data-i18n="form_name">Vollständiger Name</label>
+            <input type="text" class="form-input" required placeholder="z.B. Markus Weber">
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_email">Geschäftliche E-Mail</label>
+              <input type="email" class="form-input" required placeholder="name@unternehmen.de">
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="form_phone">Telefonnummer</label>
+              <input type="tel" class="form-input" placeholder="+49 ...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n="form_product">Interessiert an Produkt / Service</label>
+            <select class="form-select">
+              <option value="mec">Modern Events Calendar (MEC) Enterprise</option>
+              <option value="kata">Kata WordPress Multi-Purpose Theme</option>
+              <option value="shoppress">ShopPress WooCommerce Builder Suite</option>
+              <option value="custom">Custom Development & Schnittstellen</option>
+              <option value="sla">24/7 SLA Support-Vertrag</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" data-i18n="form_msg">Ihre Nachricht oder Projektbeschreibung</label>
+            <textarea class="form-textarea" rows="4" required placeholder="Beschreiben Sie kurz Ihr Vorhaben..."></textarea>
+          </div>
+          <div class="form-group" style="display:flex; align-items:flex-start; gap:10px;">
+            <input type="checkbox" id="privacyCheck" required style="margin-top:5px;">
+            <label for="privacyCheck" style="font-size:0.85rem; color:var(--text-secondary);" data-i18n="form_privacy">
+              Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu.
+            </label>
+          </div>
+          <button type="submit" class="btn-cta" style="width:100%; justify-content:center; padding:14px; font-size:1rem;" data-i18n="form_submit">
+            Unverbindliche Anfrage senden
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Sticky Mobile Action -->
+  <div class="mobile-sticky-cta">
+    <span style="font-weight:700; font-size:0.85rem;">AH Nord GmbH</span>
+    <a href="./pages/contact.html" class="btn-cta" style="padding: 8px 16px; font-size: 0.8rem;" data-i18n="btn_quote">Angebot anfordern</a>
+  </div>
+
+  <!-- Cookie Consent -->
+  <div id="cookieBanner" class="cookie-banner">
+    <p style="font-size:0.9rem; line-height:1.5;" data-i18n="cookie_text">
+      Wir verwenden Cookies, um Ihnen das beste Nutzererlebnis auf unserer Website zu bieten.
+    </p>
+    <div style="display:flex; gap:12px; justify-content:flex-end;">
+      <button onclick="declineCookies()" class="btn-secondary" style="padding:6px 14px; font-size:0.85rem;" data-i18n="cookie_decline">Ablehnen</button>
+      <button onclick="acceptCookies()" class="btn-cta" style="padding:6px 16px; font-size:0.85rem;" data-i18n="cookie_accept">Akzeptieren</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <img src="./img/logo.svg" alt="AH Nord GmbH Logo" style="height:36px; margin-bottom:16px;">
+        <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:16px; max-width:320px;">
+          Offizieller Enterprise-Reseller und Implementierungspartner der Webnus Inc. für Deutschland, Österreich und die Schweiz.
+        </p>
+        <p style="font-size:0.85rem; color:var(--text-muted);">
+          📍 Wandsbeker Chaussee 212, 22089 Hamburg, Germany<br>
+          📞 +49 173 1436411 | ✉️ info@ahnord.tech
+        </p>
+      </div>
+      <div>
+        <h4 style="font-size:1rem; font-weight:700; margin-bottom:16px;">Webnus Produkte</h4>
+        <ul style="list-style:none; font-size:0.9rem; line-height:2.2;">
+          <li><a href="./pages/modern-events-calendar.html" style="color:var(--text-secondary);">Modern Events Calendar</a></li>
+          <li><a href="./pages/kata-theme.html" style="color:var(--text-secondary);">Kata WordPress Theme</a></li>
+          <li><a href="./pages/shoppress.html" style="color:var(--text-secondary);">ShopPress WooCommerce</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:1rem; font-weight:700; margin-bottom:16px;">Enterprise Services</h4>
+        <ul style="list-style:none; font-size:0.9rem; line-height:2.2;">
+          <li><a href="./pages/services.html" style="color:var(--text-secondary);">Enterprise Setup</a></li>
+          <li><a href="./pages/services.html" style="color:var(--text-secondary);">Custom Development</a></li>
+          <li><a href="./pages/services.html" style="color:var(--text-secondary);">DSGVO Performance Audit</a></li>
+          <li><a href="./pages/services.html" style="color:var(--text-secondary);">24/7 SLA Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:1rem; font-weight:700; margin-bottom:16px;">Rechtliches & Info</h4>
+        <ul style="list-style:none; font-size:0.9rem; line-height:2.2;">
+          <li><a href="./pages/about.html" style="color:var(--text-secondary);">Über uns</a></li>
+          <li><a href="./pages/contact.html" style="color:var(--text-secondary);">Kontakt & Beratung</a></li>
+          <li><a href="./pages/privacy.html" style="color:var(--text-secondary);">Datenschutzerklärung</a></li>
+          <li><a href="./pages/terms.html" style="color:var(--text-secondary);">Impressum & AGB</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AH Nord GmbH. Alle Rechte vorbehalten.</span>
+      <span>Offizieller Vertriebspartner der Webnus Inc.</span>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

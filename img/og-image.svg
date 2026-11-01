@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14" />
+      <stop offset="100%" stop-color="#0E1626" />
+    </linearGradient>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#008AFF" />
+      <stop offset="50%" stop-color="#59B9F9" />
+      <stop offset="100%" stop-color="#936EE9" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+  <circle cx="1000" cy="150" r="300" fill="#008AFF" opacity="0.12" filter="blur(60px)" />
+  <circle cx="200" cy="500" r="250" fill="#936EE9" opacity="0.1" filter="blur(60px)" />
+  
+  <g transform="translate(100, 140)">
+    <rect width="400" height="42" rx="21" fill="rgba(0, 138, 255, 0.12)" stroke="rgba(89, 185, 249, 0.4)" />
+    <text x="25" y="27" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="16" font-weight="700" fill="#59B9F9" letter-spacing="1">
+      OFFIZIELLER WEBNUS ENTERPRISE PARTNER
+    </text>
+    
+    <text x="0" y="130" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="64" font-weight="900" fill="#FFFFFF" letter-spacing="-1">
+      AH NORD <tspan fill="url(#brandGrad)">GmbH</tspan>
+    </text>
+    
+    <text x="0" y="200" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="28" font-weight="600" fill="#94A3B8">
+      Enterprise Web Solutions • Hamburg, Germany
+    </text>
+    <text x="0" y="240" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="22" font-weight="400" fill="#64748B">
+      Modern Events Calendar • Kata WordPress Theme • ShopPress WooCommerce
+    </text>
+    
+    <g transform="translate(0, 290)">
+      <rect width="260" height="56" rx="14" fill="url(#brandGrad)" />
+      <text x="36" y="36" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">
+        https://ahnord.tech
+      </text>
+    </g>
+  </g>
+</svg>

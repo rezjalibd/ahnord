@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ahnordGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#008AFF" />
+      <stop offset="50%" stop-color="#59B9F9" />
+      <stop offset="100%" stop-color="#936EE9" />
+    </linearGradient>
+    <linearGradient id="techGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#008AFF" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#936EE9" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+  <!-- Geometric Emblem: Stylized Monogram of AH & North Compass Pointer -->
+  <g transform="translate(15, 12)">
+    <!-- Outer hexagon shield -->
+    <path d="M 38 4 L 68 21 L 68 55 L 38 72 L 8 55 L 8 21 Z" fill="none" stroke="url(#ahnordGrad)" stroke-width="3" stroke-linejoin="round" />
+    <!-- Dynamic North indicator / Apex shape -->
+    <path d="M 38 12 L 58 48 L 38 40 L 18 48 Z" fill="url(#ahnordGrad)" />
+    <!-- Modern Tech Nodes / Bridge -->
+    <circle cx="38" cy="40" r="3.5" fill="#FFFFFF" />
+    <path d="M 18 48 L 8 55 M 58 48 L 68 55" stroke="url(#ahnordGrad)" stroke-width="2.5" stroke-linecap="round" />
+    <circle cx="8" cy="55" r="2.5" fill="#59B9F9" />
+    <circle cx="68" cy="55" r="2.5" fill="#936EE9" />
+  </g>
+  <!-- Typographic Wordmark -->
+  <g transform="translate(105, 52)">
+    <text font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-size="29" font-weight="800" letter-spacing="-0.5" fill="currentColor">
+      AH NORD
+    </text>
+    <text x="145" y="-1" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-size="13" font-weight="600" fill="#008AFF" letter-spacing="1.5">
+      GmbH
+    </text>
+    <text x="2" y="22" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#94A3B8" letter-spacing="2.8">
+      ENTERPRISE WEB SOLUTIONS
+    </text>
+  </g>
+</svg>

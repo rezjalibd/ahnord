@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt & Angebot anfordern | AH Nord GmbH</title>
+  <title>Kontakt & Beratung | AH Nord GmbH</title>
   <meta name="description" content="AH Nord GmbH — Offizieller Enterprise Partner & Reseller von Webnus in Deutschland. Modern Events Calendar, Kata Theme und ShopPress WooCommerce Builder.">
   <link rel="icon" type="image/webp" href="../img/favicon.webp">
   <link rel="icon" type="image/png" href="../img/favicon.png">
   <link rel="apple-touch-icon" href="../img/favicon.png">
   
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Kontakt & Angebot anfordern | AH Nord GmbH">
+  <meta property="og:title" content="Kontakt & Beratung | AH Nord GmbH">
   <meta property="og:description" content="Offizieller Vertrieb und Integration von Webnus Enterprise Lösungen in Deutschland.">
   <meta property="og:image" content="../img/og-image.svg">
   
@@ -178,52 +178,154 @@
   <main class="main-wrapper">
 
 <section class="section-container" style="padding-top:40px;">
+  <!-- Section 1: Intro -->
   <div class="section-header">
     <span class="section-tag" data-i18n="tag_contact">KONTAKT & ANGEBOT</span>
     <h1 class="section-title" data-i18n="contact_heading">Sprechen Sie mit unseren Enterprise-Beratern</h1>
-    <p class="section-sub" data-i18n="contact_sub">Wir analysieren Ihre Projektanforderungen und erstellen Ihnen ein maßgeschneidertes Angebot innerhalb von 24 Stunden.</p>
+    <p class="section-sub" data-i18n="contact_sub">
+      Wir analysieren Ihre Projektanforderungen und erstellen Ihnen ein maßgeschneidertes Angebot innerhalb von 24 Stunden.
+    </p>
   </div>
 
-  <div style="max-width:760px; margin:0 auto;" class="form-card">
+  <!-- Section 2: Direct Communication Channels (4 Cards) -->
+  <div class="cards-grid-3" style="grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:20px; margin-bottom:50px;">
+    <div class="product-card" style="padding:22px;">
+      <div style="font-size:1.8rem; margin-bottom:10px;">📍</div>
+      <h4 style="font-size:1.05rem; font-weight:700; margin-bottom:6px;" data-i18n="contact_hamburg_office">Zentrale Hamburg</h4>
+      <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.5;">
+        Wandsbeker Chaussee 212<br>22089 Hamburg, Germany
+      </p>
+      <span style="font-size:0.75rem; color:var(--primary-blue); font-weight:600; margin-top:8px;" data-i18n="contact_hamburg_hours">Mo–Fr: 09:00 – 18:00 Uhr</span>
+    </div>
+    
+    <div class="product-card" style="padding:22px;">
+      <div style="font-size:1.8rem; margin-bottom:10px;">📞</div>
+      <h4 style="font-size:1.05rem; font-weight:700; margin-bottom:6px;" data-i18n="contact_phone_title">Enterprise Telefon</h4>
+      <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.5;">
+        +49 173 1436411<br>Direkte Durchwahl zu Beratern
+      </p>
+      <span style="font-size:0.75rem; color:var(--primary-blue); font-weight:600; margin-top:8px;">Kostenlose Erstberatung</span>
+    </div>
+
+    <div class="product-card" style="padding:22px;">
+      <div style="font-size:1.8rem; margin-bottom:10px;">✉️</div>
+      <h4 style="font-size:1.05rem; font-weight:700; margin-bottom:6px;" data-i18n="contact_email_title">E-Mail Anfragen</h4>
+      <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.5;">
+        info@ahnord.tech<br>Verschlüsselt via PGP/TLS
+      </p>
+      <span style="font-size:0.75rem; color:var(--primary-blue); font-weight:600; margin-top:8px;">Antwort binnen 24 Stunden</span>
+    </div>
+
+    <div class="product-card" style="padding:22px; border-color:var(--primary-blue);">
+      <div style="font-size:1.8rem; margin-bottom:10px;">🚨</div>
+      <h4 style="font-size:1.05rem; font-weight:700; margin-bottom:6px;" data-i18n="contact_emergency_title">24/7 SLA Notfall-Kanal</h4>
+      <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.5;" data-i18n="contact_emergency_desc">
+        Exklusiv für Kunden mit aktivem Wartungsvertrag
+      </p>
+      <span style="font-size:0.75rem; color:var(--primary-blue); font-weight:600; margin-top:8px;">SLA Level Gold & Platinum</span>
+    </div>
+  </div>
+
+  <!-- Section 3: Comprehensive Multi-Field Request Form -->
+  <div style="max-width:800px; margin:0 auto 50px;" class="form-card">
+    <div style="margin-bottom:24px;">
+      <h3 style="font-size:1.4rem; font-weight:800; margin-bottom:6px;">Unverbindliche Projektanfrage stellen</h3>
+      <p style="font-size:0.9rem; color:var(--text-secondary);">Füllen Sie die folgenden Angaben aus – wir prüfen die Machbarkeit und bereiten ein individuelles Konzept vor.</p>
+    </div>
+
     <form onsubmit="handleContactSubmit(event)">
-      <div class="form-group">
-        <label class="form-label" data-i18n="form_name">Vollständiger Name</label>
-        <input type="text" class="form-input" required placeholder="z.B. Markus Weber" data-i18n="form_name">
-      </div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+      <div class="form-grid-2">
         <div class="form-group">
-          <label class="form-label" data-i18n="form_email">Geschäftliche E-Mail</label>
+          <label class="form-label" data-i18n="form_name">Vollständiger Name *</label>
+          <input type="text" class="form-input" required placeholder="z.B. Markus Weber" data-i18n="form_name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_company">Unternehmen / Organisation *</label>
+          <input type="text" class="form-input" required placeholder="z.B. Muster GmbH" data-i18n="form_company">
+        </div>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_email">Geschäftliche E-Mail *</label>
           <input type="email" class="form-input" required placeholder="name@unternehmen.de" data-i18n="form_email">
         </div>
         <div class="form-group">
           <label class="form-label" data-i18n="form_phone">Telefonnummer</label>
-          <input type="tel" class="form-input" placeholder="+49 ..." data-i18n="form_phone">
+          <input type="tel" class="form-input" placeholder="+49 40 ..." data-i18n="form_phone">
         </div>
       </div>
-      <div class="form-group">
-        <label class="form-label" data-i18n="form_product">Interessiert an Produkt / Service</label>
-        <select class="form-select">
-          <option value="mec">Modern Events Calendar (MEC) Enterprise</option>
-          <option value="kata">Kata WordPress Multi-Purpose Theme</option>
-          <option value="shoppress">ShopPress WooCommerce Builder Suite</option>
-          <option value="custom">Custom Development & Schnittstellen</option>
-          <option value="sla">24/7 SLA Support-Vertrag</option>
-        </select>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_product">Interessiert an Produkt / Leistung</label>
+          <select class="form-select">
+            <option value="mec">Modern Events Calendar (MEC) Enterprise</option>
+            <option value="kata">Kata WordPress Multi-Purpose Theme</option>
+            <option value="shoppress">ShopPress WooCommerce Builder Suite</option>
+            <option value="custom">Custom Development & Schnittstellen</option>
+            <option value="sla">24/7 SLA Support-Vertrag</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_timeline">Geplanter Projektstart</label>
+          <select class="form-select">
+            <option value="immediate">Sofort / Innerhalb von 2 Wochen</option>
+            <option value="month">Innerhalb des nächsten Monats</option>
+            <option value="quarter">Im laufenden Quartal</option>
+            <option value="eval">Allgemeine Evaluierung / Vorplanung</option>
+          </select>
+        </div>
       </div>
+
       <div class="form-group">
-        <label class="form-label" data-i18n="form_msg">Ihre Nachricht oder Projektbeschreibung</label>
-        <textarea class="form-textarea" rows="4" required placeholder="Beschreiben Sie kurz Ihr Vorhaben..." data-i18n="form_msg"></textarea>
+        <label class="form-label" data-i18n="form_msg">Ihre Nachricht oder Projektbeschreibung *</label>
+        <textarea class="form-textarea" rows="4" required placeholder="Beschreiben Sie kurz Ihr Vorhaben, Seitenzahlen, Event-Volumen oder spezifische Anforderungen..." data-i18n="form_msg"></textarea>
       </div>
+
       <div class="form-group" style="display:flex; align-items:flex-start; gap:10px;">
         <input type="checkbox" id="privacyCheck" required style="margin-top:5px;">
         <label for="privacyCheck" style="font-size:0.85rem; color:var(--text-secondary);" data-i18n="form_privacy">
-          Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zu.
+          Ich stimme der Verarbeitung meiner Angaben gemäß der Datenschutzerklärung zu. Ich kann diese Einwilligung jederzeit für die Zukunft widerrufen.
         </label>
       </div>
-      <button type="submit" class="btn-cta" style="width:100%; justify-content:center; padding:14px; font-size:1rem;" data-i18n="form_submit">
+
+      <button type="submit" class="btn-cta" style="width:100%; justify-content:center; padding:15px; font-size:1rem;" data-i18n="form_submit">
         Unverbindliche Anfrage senden
       </button>
     </form>
+  </div>
+
+  <!-- Section 4: SLA 24h Response Guarantee Callout -->
+  <div style="background:var(--bg-surface-alt); border-radius:20px; padding:32px; max-width:800px; margin:0 auto 50px; display:flex; align-items:center; gap:24px;">
+    <div style="font-size:2.6rem;">⏱️</div>
+    <div>
+      <h4 style="font-size:1.15rem; font-weight:800; margin-bottom:4px;" data-i18n="contact_sla_banner_title">24-Stunden Rückmelde-Garantie</h4>
+      <p style="font-size:0.9rem; color:var(--text-secondary);" data-i18n="contact_sla_banner_desc">
+        Jede B2B-Anfrage wird innerhalb eines Werktages von einem qualifizierten technischen Berater beantwortet.
+      </p>
+    </div>
+  </div>
+
+  <!-- Section 5: Mini FAQ Accordion on Contact Page with Standard Spacing -->
+  <div class="section-header">
+    <span class="section-tag" data-i18n="tag_faq">FAQ ZUR ANFRAGE</span>
+    <h2 class="section-title">Häufige Fragen vor der Kontaktaufnahme</h2>
+  </div>
+
+  <div class="faq-grid" style="max-width:800px; margin:0 auto 40px;">
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Wie läuft das Erstgespräch ab?</div>
+      <div class="faq-a">Nach Eingang Ihrer Anfrage prüfen wir Ihre Anforderungen. In einem 20-30 minütigen Video- oder Telefontermin klären wir technische Details und erstellen daraufhin Ihr Festpreisangebot.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Bieten Sie Geheimhaltungsvereinbarungen (NDA) an?</div>
+      <div class="faq-a">Ja, selbstverständlich. Für Enterprise-Projekte stellen wir standardmäßig vorab beidseitige Geheimhaltungsvereinbarungen nach deutschem Recht bereit.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Kann die AH Nord GmbH bestehende Webnus-Lizenzen verlängern?</div>
+      <div class="faq-a">Ja, wir können bestehende Webnus-Abonnements in deutsche B2B-Rechnungen überführen und nahtlos weiterführen.</div>
+    </div>
   </div>
 </section>
 
@@ -253,7 +355,7 @@
     </div>
   </div>
 
-  <!-- Footer with EXACTLY 5 items in each of the 3 link columns -->
+  <!-- Symmetrical 5-Item Footer -->
   <footer class="site-footer">
     <div class="footer-grid">
       <div>

@@ -81,8 +81,9 @@ a {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
@@ -537,8 +538,8 @@ a {
 .mobile-drawer {
   position: fixed;
   top: 0;
-  right: -320px;
-  width: 300px;
+  right: 0;
+  width: min(320px, 85vw);
   height: 100vh;
   background: var(--bg-surface);
   border-left: 1px solid var(--border-color);
@@ -547,12 +548,15 @@ a {
   display: flex;
   flex-direction: column;
   padding: 24px;
-  transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(105%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+  visibility: hidden;
   overflow-y: auto;
 }
 
 .mobile-drawer.active {
-  right: 0;
+  transform: translateX(0);
+  visibility: visible;
 }
 
 .mobile-drawer-header {
@@ -1218,5 +1222,123 @@ a {
   }
   .site-footer {
     padding-bottom: 110px !important;
+  }
+}
+
+/* Standardized FAQ System with Generous Spacing */
+.faq-grid,
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 22px !important;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px 28px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  margin-bottom: 0 !important;
+}
+
+.faq-item:hover {
+  border-color: var(--primary-blue);
+  box-shadow: 0 8px 24px rgba(0, 138, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.faq-item.active {
+  border-color: var(--primary-blue);
+  box-shadow: 0 6px 20px rgba(0, 138, 255, 0.12);
+}
+
+.faq-q {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.faq-q::after {
+  content: "+";
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--primary-blue);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-q::after {
+  transform: rotate(45deg);
+}
+
+.faq-a {
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Form Responsive Grid */
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Zero Mobile Overflow Enforcement */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw;
+  }
+  
+  .hero-badge {
+    white-space: normal !important;
+    text-align: left;
+    max-width: 100%;
+    font-size: 0.78rem !important;
+    padding: 6px 12px;
+    line-height: 1.4;
+  }
+
+  .site-header {
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .header-container {
+    max-width: 100%;
+    padding: 10px 14px;
+    gap: 8px;
+  }
+
+  .product-card {
+    padding: 24px 20px;
+  }
+
+  .product-card-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
   }
 }

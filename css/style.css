@@ -545,18 +545,14 @@ a {
   border-left: 1px solid var(--border-color);
   box-shadow: var(--shadow-lg);
   z-index: 2000;
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: 24px;
-  transform: translateX(105%);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
-  visibility: hidden;
   overflow-y: auto;
 }
 
 .mobile-drawer.active {
-  transform: translateX(0);
-  visibility: visible;
+  display: flex !important;
 }
 
 .mobile-drawer-header {
@@ -1340,5 +1336,20 @@ a {
   .footer-grid {
     grid-template-columns: 1fr !important;
     gap: 36px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-card-top {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    align-items: flex-start !important;
+  }
+  
+  .product-badge {
+    font-size: 0.72rem !important;
+    padding: 3px 8px !important;
+    max-width: 100% !important;
+    white-space: normal !important;
   }
 }

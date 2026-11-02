@@ -9,7 +9,7 @@
   'use strict';
 
   let currentLang = localStorage.getItem('ahnord_lang') || 'de';
-  let currentTheme = localStorage.getItem('ahnord_theme') || 'light';
+  let currentTheme = localStorage.getItem('ahnord_theme') || 'dark';
   let translations = {};
 
   // Theme Management (Dual Theme with High Contrast & Contrast Protection)

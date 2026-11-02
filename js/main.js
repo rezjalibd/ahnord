@@ -1,7 +1,8 @@
 /**
  * AH Nord GmbH - Enterprise Site Controller
- * Handles Themes, Language Switching across all elements,
- * Mobile Drawer, Back-To-Top FAB, Forms, and Interactive Animations.
+ * Handles Themes, Comprehensive i18n Language Switching,
+ * Sticky Header, Mobile Drawer, Back-To-Top FAB, FAQ Accordions,
+ * Forms, and Animated Conical Visual Elements.
  */
 
 (function () {
@@ -58,6 +59,10 @@
     localStorage.setItem('ahnord_lang', lang);
     applyLanguage(lang);
     updateLangUI(lang);
+    
+    // Close dropdown
+    const dropdown = document.getElementById('langDropdownMenu');
+    if (dropdown) dropdown.classList.remove('show');
   };
 
   function updateLangUI(lang) {
@@ -89,12 +94,39 @@
       if (dict[key]) {
         if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
           el.placeholder = dict[key];
+        } else if (el.hasAttribute('data-i18n-html')) {
+          el.innerHTML = dict[key];
         } else {
           el.textContent = dict[key];
         }
       }
     });
   }
+
+  // Sticky Header Scroll State
+  function initStickyHeader() {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+    
+    const onScroll = () => {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    };
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  // FAQ Accordion Interaction
+  window.toggleFaq = function (btn) {
+    const item = btn.closest('.faq-item');
+    if (item) {
+      item.classList.toggle('active');
+    }
+  };
 
   // Mobile Drawer Toggle
   window.toggleMobileMenu = function () {
@@ -168,9 +200,11 @@
     const form = event.target;
     const submitBtn = form.querySelector('button[type="submit"]');
 
-    submitBtn.disabled = true;
-    submitBtn.classList.add('btn-loading');
-    submitBtn.innerHTML = '<span class="spinner"></span> <span>Wird gesendet...</span>';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.classList.add('btn-loading');
+      submitBtn.innerHTML = '<span class="spinner"></span> <span>Wird gesendet...</span>';
+    }
 
     setTimeout(() => {
       const basePath = getBasePath();
@@ -200,6 +234,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     loadTranslations();
+    initStickyHeader();
     initBackToTop();
     initCookieBanner();
     updateLangUI(currentLang);

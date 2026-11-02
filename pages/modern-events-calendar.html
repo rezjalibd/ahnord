@@ -3,41 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Events Calendar (MEC) | AH Nord GmbH</title>
+  <title>Modern Events Calendar Enterprise | AH Nord GmbH</title>
   <meta name="description" content="AH Nord GmbH — Offizieller Enterprise Partner & Reseller von Webnus in Deutschland. Modern Events Calendar, Kata Theme und ShopPress WooCommerce Builder.">
   <link rel="icon" type="image/webp" href="../img/favicon.webp">
   <link rel="icon" type="image/png" href="../img/favicon.png">
   <link rel="apple-touch-icon" href="../img/favicon.png">
   
-  <!-- Open Graph / Meta -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Modern Events Calendar (MEC) | AH Nord GmbH">
+  <meta property="og:title" content="Modern Events Calendar Enterprise | AH Nord GmbH">
   <meta property="og:description" content="Offizieller Vertrieb und Integration von Webnus Enterprise Lösungen in Deutschland.">
   <meta property="og:image" content="../img/og-image.svg">
   
-  <!-- Fonts & Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <!-- Ambient Floating Animation Shapes -->
+  <!-- Ambient Floating Animation Shapes (Conical Gradients & 3D Cones) -->
   <div class="canvas-backdrop">
+    <div class="conic-shape conic-shape-1"></div>
+    <div class="conic-shape conic-shape-2"></div>
     <div class="shape-blob shape-1"></div>
     <div class="shape-blob shape-2"></div>
-    <div class="shape-blob shape-3"></div>
-    <div class="shape-blob shape-4"></div>
+    
+    <!-- 3D Conical Geometric Floating SVG Shape 1 -->
+    <svg class="conic-3d-cone floating-cone-1" width="100" height="130" viewBox="0 0 100 130" fill="none">
+      <defs>
+        <linearGradient id="coneGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#008AFF" stop-opacity="0.85"/>
+          <stop offset="60%" stop-color="#936EE9" stop-opacity="0.75"/>
+          <stop offset="100%" stop-color="#59B9F9" stop-opacity="0.9"/>
+        </linearGradient>
+        <linearGradient id="coneBase1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#0066CC" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#008AFF" stop-opacity="0.5"/>
+        </linearGradient>
+      </defs>
+      <path d="M50 8 L90 98 C72 112 28 112 10 98 Z" fill="url(#coneGrad1)"/>
+      <ellipse cx="50" cy="98" rx="40" ry="14" fill="url(#coneBase1)"/>
+      <path d="M50 8 L68 98 C60 106 40 106 32 98 Z" fill="white" fill-opacity="0.25"/>
+    </svg>
+
+    <!-- 3D Conical Geometric Floating SVG Shape 2 -->
+    <svg class="conic-3d-cone floating-cone-2" width="80" height="110" viewBox="0 0 100 130" fill="none">
+      <path d="M50 8 L90 98 C72 112 28 112 10 98 Z" fill="url(#coneGrad1)"/>
+      <ellipse cx="50" cy="98" rx="40" ry="14" fill="url(#coneBase1)"/>
+    </svg>
   </div>
 
-  <!-- Header -->
+  <!-- Sticky Header -->
   <header class="site-header">
     <div class="header-container">
       <a href="../index.html" class="brand-link">
         <img src="../img/logo.webp" alt="AH Nord GmbH Logo" class="brand-logo">
       </a>
       
-      <!-- Desktop Navigation with Products Dropdown -->
+      <!-- Desktop Navigation -->
       <nav class="main-nav">
         <a href="../index.html" class="nav-link" data-i18n="nav_home">Startseite</a>
         
@@ -73,10 +95,11 @@
 
         <a href="../pages/services.html" class="nav-link" data-i18n="nav_services">Dienstleistungen</a>
         <a href="../pages/about.html" class="nav-link" data-i18n="nav_about">Über uns</a>
+        <a href="../pages/faq.html" class="nav-link" data-i18n="nav_faq">Häufige Fragen (FAQ)</a>
         <a href="../pages/contact.html" class="nav-link" data-i18n="nav_contact">Kontakt</a>
       </nav>
       
-      <!-- Header Controls: Redesigned Language & Theme Switchers -->
+      <!-- Header Controls -->
       <div class="header-actions">
         <!-- Language Switcher Pill -->
         <div class="lang-dropdown-wrapper">
@@ -98,9 +121,8 @@
           </div>
         </div>
 
-        <!-- Theme Toggle Button with Geometric SVG Icons -->
+        <!-- Theme Toggle Button -->
         <button class="btn-theme-toggle" aria-label="Farbschema umschalten" title="Theme umschalten">
-          <!-- Sun icon for Dark Mode -->
           <svg class="theme-icon-sun" viewBox="0 0 24 24" style="display:none;">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -112,7 +134,6 @@
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
           </svg>
-          <!-- Moon icon for Light Mode -->
           <svg class="theme-icon-moon" viewBox="0 0 24 24">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
@@ -120,7 +141,7 @@
 
         <a href="../pages/contact.html" class="btn-cta" data-i18n="btn_quote">Angebot anfordern</a>
         
-        <!-- Mobile Drawer Toggle Trigger -->
+        <!-- Mobile Toggle -->
         <button class="mobile-toggle" id="mobileToggleBtn" onclick="toggleMobileMenu()" aria-label="Menü öffnen">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -132,7 +153,7 @@
     </div>
   </header>
 
-  <!-- Mobile Off-Canvas Drawer -->
+  <!-- Mobile Drawer -->
   <div class="mobile-drawer-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
   <aside class="mobile-drawer" id="mobileDrawer">
     <div class="mobile-drawer-header">
@@ -146,6 +167,7 @@
       <a href="../pages/shoppress.html" class="mobile-nav-link" data-i18n="nav_shoppress">ShopPress Builder</a>
       <a href="../pages/services.html" class="mobile-nav-link" data-i18n="nav_services">Dienstleistungen</a>
       <a href="../pages/about.html" class="mobile-nav-link" data-i18n="nav_about">Über uns</a>
+      <a href="../pages/faq.html" class="mobile-nav-link" data-i18n="nav_faq">Häufige Fragen (FAQ)</a>
       <a href="../pages/contact.html" class="mobile-nav-link" data-i18n="nav_contact">Kontakt</a>
     </div>
     <div style="margin-top:auto; padding-top:20px;">
@@ -155,123 +177,87 @@
 
   <main class="main-wrapper">
 
-    <section class="section-container" style="padding-top:40px;">
-      <div style="display:grid; grid-template-columns:1.2fr 0.8fr; gap:50px; align-items:center; margin-bottom:60px;">
+<section class="section-container" style="padding-top:40px;">
+  <div style="display:grid; grid-template-columns:1.2fr 0.8fr; gap:50px; align-items:center; margin-bottom:60px;">
+    <div>
+      <span class="section-tag" data-i18n="tag_portfolio">WEBNUS ENTERPRISE</span>
+      <h1 class="section-title" style="font-size:2.8rem; margin-bottom:16px;" data-i18n="mec_page_title">Modern Events Calendar Enterprise</h1>
+      <p class="hero-subtitle" data-i18n="mec_page_sub">Die führende WordPress-Eventplattform für Konferenzen, Seminare, Webinare und Ticketverkauf mit vollständiger API-Anbindung.</p>
+      <div style="display:flex; gap:16px; margin-bottom:30px;">
+        <a href="../pages/contact.html" class="btn-cta" data-i18n="btn_pricing">Preise & Lizenz anfragen</a>
+        <a href="../pages/services.html" class="btn-secondary" data-i18n="btn_contact">Setup & Support buchen</a>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; border-top:1px solid var(--border-color); padding-top:20px;">
         <div>
-          <span class="section-tag">WEBNUS ENTERPRISE</span>
-          <h1 class="section-title" style="font-size:2.8rem; margin-bottom:16px;">Modern Events Calendar (MEC)</h1>
-          <p class="hero-subtitle">Das führende Event-Management-System für WordPress mit über 60 Display-Layouts, Ticket-Verkauf, QR-Code Check-in, Zoom-Integration und mobilem Veranstaltungs-Dashboard.</p>
-          <div style="display:flex; gap:16px; margin-bottom:30px;">
-            <a href="../pages/contact.html" class="btn-cta" data-i18n="btn_pricing">Preise & Lizenz anfragen</a>
-            <a href="../pages/services.html" class="btn-secondary" data-i18n="btn_contact">Setup & Support buchen</a>
-          </div>
-          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; border-top:1px solid var(--border-color); padding-top:20px;">
-            <div>
-              <div class="stat-val">200k+</div>
-              <div class="stat-label">Aktive Installationen</div>
-            </div>
-            <div>
-              <div class="stat-val">60+</div>
-              <div class="stat-label">Kalender-Layouts</div>
-            </div>
-            <div>
-              <div class="stat-val">99.8%</div>
-              <div class="stat-label">Zufriedenheitsrate</div>
-            </div>
-          </div>
+          <div class="stat-val">200k+</div>
+          <div class="stat-label" data-i18n="stat_installs">Aktive Installationen</div>
         </div>
         <div>
-          <div class="visual-card-glass floating-element">
-            <img src="../img/mec-hero.svg" alt="Modern Events Calendar (MEC)" style="border-radius:14px;">
-          </div>
+          <div class="stat-val">60+</div>
+          <div class="stat-label">Event-Layouts</div>
+        </div>
+        <div>
+          <div class="stat-val">99.9%</div>
+          <div class="stat-label" data-i18n="stat_uptime">SLA Verfügbarkeit</div>
         </div>
       </div>
+    </div>
+    <div>
+      <div class="visual-card-glass floating-element">
+        <img src="../img/mec-hero.svg" alt="Modern Events Calendar" style="border-radius:14px;">
+      </div>
+    </div>
+  </div>
 
-      <div class="section-header">
-        <h2 class="section-title">Hauptfunktionen & Enterprise Features</h2>
-        <p class="section-sub">Entwickelt für höchste Performance, Skalierbarkeit und nahtlose Integration.</p>
-      </div>
+  <div class="section-header">
+    <span class="section-tag" data-i18n="tag_tech_specs">TECHNISCHE ARCHITEKTUR</span>
+    <h2 class="section-title" data-i18n="mec_arch_heading">Technische Architektur & Features</h2>
+    <p class="section-sub" data-i18n="mec_arch_sub">Moderne Code-Basis, REST-API Endpunkte und maximale Skalierbarkeit für Millionen von monatlichen Seitenaufrufen.</p>
+  </div>
 
-      <div class="cards-grid-3" style="margin-bottom:60px;">
-    
-        <div class="product-card">
-          <div style="font-size:1.8rem; color:var(--primary-blue); margin-bottom:14px;">⚡</div>
-          <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:10px;">Über 60 moderne Kalender- und Event-Layouts (Monat, Woche, Liste, Grid, Slider)</h3>
-          <p style="color:var(--text-secondary); font-size:0.9rem;">
-            Volle Enterprise-Unterstützung und Anpassungsfähigkeit für anspruchsvolle Architekturen.
-          </p>
-        </div>
-        
-        <div class="product-card">
-          <div style="font-size:1.8rem; color:var(--primary-blue); margin-bottom:14px;">⚡</div>
-          <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:10px;">Integrierter Ticket-Verkauf mit variablen Tarifen und Sitzplatz-Buchung</h3>
-          <p style="color:var(--text-secondary); font-size:0.9rem;">
-            Volle Enterprise-Unterstützung und Anpassungsfähigkeit für anspruchsvolle Architekturen.
-          </p>
-        </div>
-        
-        <div class="product-card">
-          <div style="font-size:1.8rem; color:var(--primary-blue); margin-bottom:14px;">⚡</div>
-          <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:10px;">QR-Code Ticket Check-in via mobiler Scanner-App (iOS & Android)</h3>
-          <p style="color:var(--text-secondary); font-size:0.9rem;">
-            Volle Enterprise-Unterstützung und Anpassungsfähigkeit für anspruchsvolle Architekturen.
-          </p>
-        </div>
-        
-        <div class="product-card">
-          <div style="font-size:1.8rem; color:var(--primary-blue); margin-bottom:14px;">⚡</div>
-          <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:10px;">Native Integration mit Elementor, Divi und Gutenberg</h3>
-          <p style="color:var(--text-secondary); font-size:0.9rem;">
-            Volle Enterprise-Unterstützung und Anpassungsfähigkeit für anspruchsvolle Architekturen.
-          </p>
-        </div>
-        
-        <div class="product-card">
-          <div style="font-size:1.8rem; color:var(--primary-blue); margin-bottom:14px;">⚡</div>
-          <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:10px;">Zoom & Web-Meeting Automatisierung für hybride Events</h3>
-          <p style="color:var(--text-secondary); font-size:0.9rem;">
-            Volle Enterprise-Unterstützung und Anpassungsfähigkeit für anspruchsvolle Architekturen.
-          </p>
-        </div>
-        
-        <div class="product-card">
-          <div style="font-size:1.8rem; color:var(--primary-blue); margin-bottom:14px;">⚡</div>
-          <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:10px;">Zahlungs-Gateways: Stripe, PayPal, WooCommerce, Apple Pay & Google Pay</h3>
-          <p style="color:var(--text-secondary); font-size:0.9rem;">
-            Volle Enterprise-Unterstützung und Anpassungsfähigkeit für anspruchsvolle Architekturen.
-          </p>
-        </div>
-        
-        <div class="product-card">
-          <div style="font-size:1.8rem; color:var(--primary-blue); margin-bottom:14px;">⚡</div>
-          <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:10px;">Wiederkehrende Events mit flexiblen Rhythmen und Feiertags-Filtern</h3>
-          <p style="color:var(--text-secondary); font-size:0.9rem;">
-            Volle Enterprise-Unterstützung und Anpassungsfähigkeit für anspruchsvolle Architekturen.
-          </p>
-        </div>
-        
-        <div class="product-card">
-          <div style="font-size:1.8rem; color:var(--primary-blue); margin-bottom:14px;">⚡</div>
-          <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:10px;">Umfangreiche Add-ons: Frontend Submission, Virtual Events, User Dashboard</h3>
-          <p style="color:var(--text-secondary); font-size:0.9rem;">
-            Volle Enterprise-Unterstützung und Anpassungsfähigkeit für anspruchsvolle Architekturen.
-          </p>
-        </div>
-        
-      </div>
+  <div class="cards-grid-3" style="margin-bottom:60px;">
+    <div class="product-card">
+      <div style="font-size:1.8rem; color:var(--primary-blue); margin-bottom:14px;">📅</div>
+      <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:10px;" data-i18n="mec_f1_title">60+ Responsive Event-Layouts</h3>
+      <p style="color:var(--text-secondary); font-size:0.9rem;" data-i18n="mec_f1_desc">Raster, Kalender, Zeitstrahl, Slider, Karussell, Countdown und Kartenansichten mit OpenStreetMap und Google Maps.</p>
+    </div>
+    <div class="product-card">
+      <div style="font-size:1.8rem; color:var(--primary-blue); margin-bottom:14px;">🎟️</div>
+      <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:10px;" data-i18n="mec_f2_title">Komplettes Buchungs- & Ticketsystem</h3>
+      <p style="color:var(--text-secondary); font-size:0.9rem;" data-i18n="mec_f2_desc">Variable Ticketarten, Sitzplatzreservierung, Rabattcodes, PDF-Tickets und QR-Code Einlasskontrolle per Smartphone.</p>
+    </div>
+    <div class="product-card">
+      <div style="font-size:1.8rem; color:var(--primary-blue); margin-bottom:14px;">🎥</div>
+      <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:10px;" data-i18n="mec_f3_title">Virtuelle Events & Zoom-Automatisierung</h3>
+      <p style="color:var(--text-secondary); font-size:0.9rem;" data-i18n="mec_f3_desc">Automatische Generierung von Zoom-Meetings und Webinaren mit Passwortschutz und Kalendereinladung.</p>
+    </div>
+    <div class="product-card">
+      <div style="font-size:1.8rem; color:var(--primary-blue); margin-bottom:14px;">💳</div>
+      <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:10px;" data-i18n="mec_f4_title">Zahlungsgateways nach europäischen Standards</h3>
+      <p style="color:var(--text-secondary); font-size:0.9rem;" data-i18n="mec_f4_desc">Direkte Integration von Stripe, PayPal, SEPA, Klarna, WooCommerce und Offline-Überweisungen.</p>
+    </div>
+    <div class="product-card">
+      <div style="font-size:1.8rem; color:var(--primary-blue); margin-bottom:14px;">🛡️</div>
+      <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:10px;" data-i18n="why_2_title">100% DSGVO & Datenschutz</h3>
+      <p style="color:var(--text-secondary); font-size:0.9rem;" data-i18n="why_2_desc">DSGVO-konforme Konfiguration ohne unautorisierte US-Datentransfers, mit lokalem Hosting aller Assets.</p>
+    </div>
+    <div class="product-card">
+      <div style="font-size:1.8rem; color:var(--primary-blue); margin-bottom:14px;">🔄</div>
+      <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:10px;" data-i18n="srv_1_title">Enterprise Setup & Migration</h3>
+      <p style="color:var(--text-secondary); font-size:0.9rem;" data-i18n="srv_1_desc">Schlüsselfertige Implementierung von Webnus-Produkten in Ihrer Server- und Cloud-Infrastruktur ohne Downtime.</p>
+    </div>
+  </div>
 
-      <div style="text-align:center; background:var(--bg-surface-alt); padding:48px 24px; border-radius:24px;">
-        <h3 style="font-size:1.8rem; font-weight:800; margin-bottom:12px;">Interesse an Modern Events Calendar (MEC)?</h3>
-        <p style="color:var(--text-secondary); margin-bottom:24px; max-width:600px; margin-left:auto; margin-right:auto;">
-          Fordern Sie jetzt Ihr unverbindliches Angebot für Enterprise-Lizenzen, Support oder individuelle Anpassungen an.
-        </p>
-        <a href="../pages/contact.html" class="btn-cta" style="padding:12px 28px; font-size:1rem;" data-i18n="btn_quote">Jetzt Angebot anfordern</a>
-      </div>
-    </section>
-    
+  <div style="text-align:center; background:var(--bg-surface-alt); padding:48px 24px; border-radius:24px;">
+    <h3 style="font-size:1.8rem; font-weight:800; margin-bottom:12px;">Interesse an Modern Events Calendar?</h3>
+    <p style="color:var(--text-secondary); margin-bottom:24px; max-width:600px; margin-left:auto; margin-right:auto;" data-i18n="contact_sub">Fordern Sie jetzt Ihr unverbindliches Angebot für Enterprise-Lizenzen, Support oder individuelle Anpassungen an.</p>
+    <a href="../pages/contact.html" class="btn-cta" style="padding:12px 28px; font-size:1rem;" data-i18n="btn_quote">Jetzt Angebot anfordern</a>
+  </div>
+</section>
+
   </main>
 
-  <!-- Floating Back to Top Button -->
+  <!-- Back to Top FAB -->
   <button id="backToTopBtn" class="back-to-top-btn" aria-label="Nach oben scrollen" title="Nach oben">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
       <polyline points="18 15 12 9 6 15"></polyline>
@@ -284,7 +270,7 @@
     <a href="../pages/contact.html" class="btn-cta" style="padding: 8px 16px; font-size: 0.82rem;" data-i18n="btn_quote">Angebot anfordern</a>
   </div>
 
-  <!-- Cookie Consent -->
+  <!-- Cookie Banner -->
   <div id="cookieBanner" class="cookie-banner">
     <p style="font-size:0.9rem; line-height:1.5;" data-i18n="cookie_text">
       Wir verwenden Cookies, um Ihnen das beste Nutzererlebnis auf unserer Website zu bieten.
@@ -295,49 +281,60 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer with EXACTLY 5 items in each of the 3 link columns -->
   <footer class="site-footer">
     <div class="footer-grid">
       <div>
         <img src="../img/logo.webp" alt="AH Nord GmbH Logo" class="brand-logo footer-logo" style="height:38px; margin-bottom:16px;">
-        <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:16px; max-width:320px;">
-          Offizieller Enterprise-Reseller und Implementierungspartner der Webnus Inc. für Deutschland, Österreich und die Schweiz.
+        <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:16px; max-width:320px;" data-i18n="about_desc_2">
+          Unsere Mission ist es, die technologische Spitzenklasse der Webnus-Produkte mit hanseatischer Zuverlässigkeit und juristischer Sicherheit zu verbinden.
         </p>
         <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.8;">
           📍 Wandsbeker Chaussee 212, 22089 Hamburg, Germany<br>
           📞 +49 173 1436411 | ✉️ info@ahnord.tech
         </p>
       </div>
+
+      <!-- Column 1: Webnus Produkte (5 items) -->
       <div>
-        <h4 style="font-size:1rem; font-weight:700; margin-bottom:16px;">Webnus Produkte</h4>
-        <ul style="list-style:none; font-size:0.9rem; line-height:2.2;">
+        <h4 style="font-size:1rem; font-weight:700; margin-bottom:16px;" data-i18n="footer_col_products">Webnus Produkte</h4>
+        <ul class="footer-col-list" style="list-style:none; font-size:0.9rem; line-height:2.2;">
           <li><a href="../pages/modern-events-calendar.html" style="color:var(--text-secondary);" data-i18n="nav_mec">Modern Events Calendar</a></li>
           <li><a href="../pages/kata-theme.html" style="color:var(--text-secondary);" data-i18n="nav_kata">Kata WordPress Theme</a></li>
-          <li><a href="../pages/shoppress.html" style="color:var(--text-secondary);" data-i18n="nav_shoppress">ShopPress WooCommerce</a></li>
+          <li><a href="../pages/shoppress.html" style="color:var(--text-secondary);" data-i18n="nav_shoppress">ShopPress Builder</a></li>
+          <li><a href="../pages/modern-events-calendar.html" style="color:var(--text-secondary);" data-i18n="footer_item_addons">Enterprise Add-ons & Bundles</a></li>
+          <li><a href="../pages/services.html" style="color:var(--text-secondary);" data-i18n="footer_item_integrations">Integration & Schnittstellen</a></li>
         </ul>
       </div>
+
+      <!-- Column 2: Enterprise Services (5 items) -->
       <div>
-        <h4 style="font-size:1rem; font-weight:700; margin-bottom:16px;">Enterprise Services</h4>
-        <ul style="list-style:none; font-size:0.9rem; line-height:2.2;">
+        <h4 style="font-size:1rem; font-weight:700; margin-bottom:16px;" data-i18n="footer_col_services">Enterprise Services</h4>
+        <ul class="footer-col-list" style="list-style:none; font-size:0.9rem; line-height:2.2;">
           <li><a href="../pages/services.html" style="color:var(--text-secondary);" data-i18n="srv_1_title">Enterprise Setup & Migration</a></li>
           <li><a href="../pages/services.html" style="color:var(--text-secondary);" data-i18n="srv_2_title">Custom Development & APIs</a></li>
           <li><a href="../pages/services.html" style="color:var(--text-secondary);" data-i18n="srv_3_title">DSGVO-Audit & Compliance</a></li>
+          <li><a href="../pages/services.html" style="color:var(--text-secondary);" data-i18n="srv_4_title">Performance & Core Web Vitals</a></li>
           <li><a href="../pages/services.html" style="color:var(--text-secondary);" data-i18n="srv_5_title">24/7 SLA Support</a></li>
         </ul>
       </div>
+
+      <!-- Column 3: Unternehmen & Rechtliches (5 items) -->
       <div>
-        <h4 style="font-size:1rem; font-weight:700; margin-bottom:16px;">Rechtliches & Info</h4>
-        <ul style="list-style:none; font-size:0.9rem; line-height:2.2;">
+        <h4 style="font-size:1rem; font-weight:700; margin-bottom:16px;" data-i18n="footer_col_legal">Unternehmen & Rechtliches</h4>
+        <ul class="footer-col-list" style="list-style:none; font-size:0.9rem; line-height:2.2;">
           <li><a href="../pages/about.html" style="color:var(--text-secondary);" data-i18n="nav_about">Über uns</a></li>
           <li><a href="../pages/contact.html" style="color:var(--text-secondary);" data-i18n="nav_contact">Kontakt & Beratung</a></li>
+          <li><a href="../pages/faq.html" style="color:var(--text-secondary);" data-i18n="nav_faq">Häufige Fragen (FAQ)</a></li>
           <li><a href="../pages/privacy.html" style="color:var(--text-secondary);" data-i18n="privacy_policy">Datenschutzerklärung</a></li>
           <li><a href="../pages/terms.html" style="color:var(--text-secondary);" data-i18n="terms_conditions">Impressum & AGB</a></li>
         </ul>
       </div>
     </div>
+    
     <div class="footer-bottom">
       <span>© 2026 AH Nord GmbH. <span data-i18n="footer_rights">Alle Rechte vorbehalten.</span></span>
-      <span>Offizieller Vertriebspartner der Webnus Inc.</span>
+      <span data-i18n="footer_partner_note">Offizieller Vertriebspartner der Webnus Inc. in Deutschland.</span>
     </div>
   </footer>
 
